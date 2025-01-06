@@ -1,22 +1,28 @@
 class MathRequest:
 
     def __init__ (self, ope1, operator, ope2):
-        raise NotImplementedError
+        self.result = None
+        self.ope1 = ope1
+        self.operator = operator
+        self.ope2 = ope2
 
     def get_ope1(self):
-        raise NotImplementedError
+        return self.ope1
 
     def get_operator(self):
-        raise NotImplementedError
+        return self.operator
 
     def get_ope2(self):
-        raise NotImplementedError
+        return self.ope2
 
-    def get_res(self):
-        raise NotImplementedError
+    def get_res(self, result = None):
+        if result is not None:
+            self.result = result
+        return self.result
 
     def set_res(self, value):
-        raise NotImplementedError
+        self.result = value
+
 
     def to_string(self):
-        raise NotImplementedError
+        return f"{self.ope1} {self.operator} {self.ope2} = {self.result}"
